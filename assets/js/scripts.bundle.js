@@ -1,0 +1,1 @@
+var app=angular.module("toniApp",["ui.router"]);app.config(["$stateProvider","$urlRouterProvider","$locationProvider",function(o,e,r){e.otherwise("/"),o.state("home",{url:"/",templateUrl:"./views/home.view.html",controller:"HomeCtrl"})}]),app.controller("HomeCtrl",["$scope",function(o){}]);
