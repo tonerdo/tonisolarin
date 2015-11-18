@@ -31,7 +31,7 @@ gulp.task('minify-html', function () {
 // JS concat, strip debugging and minify
 gulp.task('minify-js', function () {
   gulp.src(['./src/js/*.js', './src/js/controllers/*.js'])
-    .pipe(concat('scripts.bundle.js'))
+    .pipe(concat('scripts.js'))
     .pipe(stripDebug())
     .pipe(uglify())
     .pipe(gulp.dest('./public/assets/js'));
@@ -50,8 +50,13 @@ gulp.task('serve', serve({
   port: 8000
 }));
 
+gulp.task('copy-img', function () {
+  gulp.src(['src/img/*.*'])
+    .pipe(gulp.dest('./public/assets/img'));
+});
+
 // default gulp task
-gulp.task('default', ['minify-html', 'minify-js', 'minify-css'], function () {
+gulp.task('default', ['minify-html', 'minify-js', 'minify-css', 'copy-img'], function () {
   
   // watch for HTML changes
   gulp.watch('./src/**/*.html', ['minify-html']);
