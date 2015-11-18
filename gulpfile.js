@@ -50,13 +50,16 @@ gulp.task('serve', serve({
   port: 8000
 }));
 
-gulp.task('copy-img', function () {
+gulp.task('copy-assets', function () {
   gulp.src(['src/img/*.*'])
     .pipe(gulp.dest('./public/assets/img'));
+  
+  gulp.src(['src/fonts/**'])
+    .pipe(gulp.dest('./public/assets/fonts'));
 });
 
 // default gulp task
-gulp.task('default', ['minify-html', 'minify-js', 'minify-css', 'copy-img'], function () {
+gulp.task('default', ['minify-html', 'minify-js', 'minify-css', 'copy-assets'], function () {
   
   // watch for HTML changes
   gulp.watch('./src/**/*.html', ['minify-html']);
