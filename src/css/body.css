@@ -1,0 +1,7 @@
+body {
+  background-image: url('/assets/img/me_gray.jpg');
+  background-position: right bottom;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
