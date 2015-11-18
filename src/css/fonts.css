@@ -1,0 +1,9 @@
+@font-face {
+   font-family: Raleway Thin;
+   src: url('../fonts/raleway/raleway_thin-webfont.woff');
+}
+
+@font-face {
+  font-family: Stalemate;
+  src: url('../fonts/stalemate/stalemate-regular.ttf');
+}
